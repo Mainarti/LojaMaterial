@@ -11,66 +11,61 @@ public class Material
     
     }
     private String nome;
-    public void setNome(String nomeP)
+    private int quantidade;
+    private float preço;
+    private String especif;
+    private float margemLucro;
+    private Date dataFabricação;
+    
+    public void setNome(String nome)
     {
-        nome = nomeP;
+        this.nome = nome;
     }
     public String getnome()
     {
         return nome;
     }
-    
-    private int quantidade;
-    public void setQuantidade (int quant)
+    public void setQuantidade (int quantidade)
     {
-        quantidade = quant;
+        this.quantidade = quantidade;
     }
     public int getquant()
     {
         return quantidade;
     }
-    
-    private float preço;
-    public void setPreço (float preçoM)
+    public void setPreço (float preço)
     {
-        preço = preçoM;
+        this.preço = preço;
     }
     public float getPreço()
     {
         return preço;
     }
-    
-    private String especif;
-    public void setEspecif (String especifM)
+    public void setEspecif (String especif)
     {
-        especif = especifM;
+        this.especif = especif;
     }
     public String getEspecif ()
     {
         return especif;
     }
-    
-    private float margemLucro;
-    public void setMargemLucro (float margemL)
+    public void setMargemLucro (float margemLucro)
     {
-        margemLucro = margemL;
+        this.margemLucro = margemLucro;
     }
     public float getMagemLucro()
     {
         return margemLucro;
     }
-    
-    private Date dataFabricação;
-    public void setDataFabricação (Date dataF)
+    public void setDataFabricação (Date dataFabricação)
     {
-        dataFabricação = dataF;
+        this.dataFabricação = dataFabricação;
     }
     public Date getDataFabricação()
     {
         return dataFabricação;
     }
-    
-    private final String[] fornecedor = new String [20];
+    private final String[] material = new String [20];
     
     @Override
 	public String toString() 
@@ -79,5 +74,4 @@ public class Material
                    ", Preço: " + this.preço + ", Especificação: " + this.especif +
                    ", Margem de Lucro: " + this.margemLucro + ", Data de Fabricação " + this.dataFabricação;
         }
-    
 }
