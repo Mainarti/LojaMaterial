@@ -1,15 +1,7 @@
 package projeto;
 import java.util.Date;
-/**
- *
- * @author Mainarti
- */
 public class Material 
 {
-    public Material () 
-    { 
-    
-    }
     private String nome;
     private int quantidade;
     private float preço;
@@ -17,6 +9,15 @@ public class Material
     private float margemLucro;
     private Date dataFabricação;
     
+    public Material (String nome, int quantidade, float preço, String especif, float margemLucro, Date dataFabricação) 
+    { 
+        this.nome = nome;
+        this.quantidade = quantidade;
+        this.preço = preço;
+        this.especif = especif;
+        this.margemLucro = margemLucro;
+        this.dataFabricação = dataFabricação;
+    }
     public void setNome(String nome)
     {
         this.nome = nome;
