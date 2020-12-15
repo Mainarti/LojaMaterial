@@ -28,7 +28,7 @@ public class Vendas
     {
         return idvenda;
     }
-    public void setIdVenda(int idvenda) 
+    public void setIdVenda(int idVenda) 
     {
         this.idvenda = idvenda;
     }
