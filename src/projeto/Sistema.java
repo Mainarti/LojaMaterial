@@ -13,9 +13,11 @@ public class Sistema
     public static void main(String[] args) 
     {
     // o menu vai ser aqui
-        Sistema teste = new Sistema();
-        teste.RealizarVenda();
-        //teste.CancelarVendas();
+        Sistema chamada = new Sistema();
+        //chamada.RealizarVenda();
+        //chamada.CancelarVendas();
+        //chamada.IncluirMaterial();
+        //chamada.IncluirFornecedor();
     }
     private void IncluirColaborador()
     {
@@ -27,8 +29,30 @@ public class Sistema
     }
     private void IncluirMaterial()
     {
-        Material teste = new Material("Porta", 5, 67, 02, "12/12/2020");
-        teste.VerificarEstoque();
+        Material prod = new Material();
+        
+        Scanner input = new Scanner(System.in);
+        
+        System.out.print("Entre com a Data da venda: ");
+        prod.setNome(input.nextLine());
+        
+        System.out.print("Entre com o Id da Venda: ");
+        prod.setDataFabricação(input.nextLine());
+        
+        System.out.print("Entre com o valor total da venda: ");
+        prod.setPreço(input.nextFloat());
+        
+        System.out.print("Entre com a margem de lucro: ");
+        prod.setMargemLucro(input.nextFloat());
+        
+        System.out.print("Entre com a data de fabricação: ");
+        prod.setDataFabricação(input.nextLine());
+        
+        Material.add(prod);
+        
+        System.out.println(Material.contains(prod));
+                
+        prod.VerificarEstoque();
     }
     private void RealizarVenda()
     {
@@ -47,20 +71,22 @@ public class Sistema
         
         Venda.add(vendasO);
         
+        vendasO.GerarExtrato();
+        
         System.out.println(Venda.contains(vendasO));
         
             }
     private void CancelarVendas()
     {
-        //Vendas vendasC = new Vendas(5,5,"");
+        Vendas vendasO = new Vendas();
         
-       // Vendas.add(vendasC);
-        
-        //System.out.println(this.toString() );
+        vendasO.GerarExtrato();
 
-        //Vendas.remove(vendasC);
+        Venda.remove(vendasO);
         
-        //System.out.println(Vendas.contains(vendasC));
+        System.out.println("Venda Cancelada");
+        
+        System.out.println(Venda.contains(vendasO));
     }
     private void ConsultarVendas()
     {
@@ -69,10 +95,25 @@ public class Sistema
     }
     private void IncluirFornecedor()
     {
-        Fornecedor teste = new Fornecedor("Casas Bahia", "12354789721", "38-988369993", "mainarti.christian");
-        System.out.println(teste.toString());
+        Fornecedor forneced = new Fornecedor();
+        
+        Scanner input = new Scanner(System.in);
+        
+        System.out.print("Entre com o nome do fornecedor: ");
+        forneced.setNome(input.nextLine());
+        
+        System.out.print("Entre com o CNPJ do fornecedor: ");
+        forneced.setCnpj(input.nextLine());
+        
+        System.out.print("Entre com telefone do fornecedor: ");
+        forneced.setTelefone(input.nextLine());
+        
+        System.out.print("Entre com o email do fornecedor: ");
+        forneced.setTelefone(input.nextLine());
+        
+        Fornecedor.add(forneced);
+        
+        System.out.println(Fornecedor.contains(forneced));
+
     }
-}
-    
-    
- 
+    }

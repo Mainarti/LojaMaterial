@@ -9,7 +9,7 @@ public class Material
     private float margemLucro;
     private String dataFabricação;
     
-    public Material (String nome, int quantidade, float preço, float margemLucro, String dataFabricação) 
+    public Material () 
     { 
         this.nome = nome;
         this.quantidade = quantidade;
@@ -45,7 +45,7 @@ public class Material
     {
         this.margemLucro = margemLucro;
     }
-    public float getMagemLucro()
+    public float getMargemLucro()
     {
         return margemLucro;
     }
