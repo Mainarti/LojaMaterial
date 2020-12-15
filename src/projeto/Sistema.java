@@ -13,11 +13,13 @@ public class Sistema
     public static void main(String[] args) 
     {
     // o menu vai ser aqui
+        
         Sistema chamada = new Sistema();
         //chamada.RealizarVenda();
         //chamada.CancelarVendas();
         //chamada.IncluirMaterial();
         //chamada.IncluirFornecedor();
+        //chamada.ConsultarVendas();
     }
     private void IncluirColaborador()
     {
@@ -90,8 +92,8 @@ public class Sistema
     }
     private void ConsultarVendas()
     {
-        Vendas teste = new Vendas();
-        System.out.println(toString());
+        Vendas vendaC = new Vendas();
+        vendaC.GerarExtrato();
     }
     private void IncluirFornecedor()
     {
