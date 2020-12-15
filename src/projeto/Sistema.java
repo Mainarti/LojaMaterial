@@ -1,128 +1,200 @@
 package projeto;
 import java.util.Scanner;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Date;
         
 public class Sistema 
 {
+    ArrayList Material = new ArrayList();
+    private String[] colaborador = new String [25];
+    ArrayList Vendas = new ArrayList();
+    ArrayList Cliente = new ArrayList();
+    ArrayList Fornecedor = new ArrayList();
+    
     public static void main(String[] args) 
     {
     // o menu vai ser aqui
-        int opçãoMenu = 0;
+        Sistema meuSistema = new Sistema();
+        meuSistema.Menu();
+        
+    }
+    private void Menu()
+    {
+       int opção = 0;
+        Scanner inMenu = new Scanner(System.in);
         do
         {
-            Scanner menuSc = new Scanner (System.in); 
-
-            System.out.println("Bem Vindo a loja Construmar, selecione o Módulo que você queira acessar");
-            System.out.println("Opção 1 - Material");
-            System.out.println("Opção 2 - Fornecedor");
-            System.out.println("Opção 3 - Cliente");
-            System.out.println("Opção 4 - Vendas");
-            System.out.println("Opção 0 - Sair");
-            System.out.println("_______________________");
-            
-            System.out.print("Digite aqui sua opção: ");
-            opçãoMenu = Integer.parseInt(menuSc.nextLine());
-            
-            if(opçãoMenu == 1)
-            {
-                ScannerMat();
-            }
-            if(opçãoMenu == 2)
-            {
-                ScannerVendas();
-            }
-        }
-        while (opçãoMenu != 0);
-        
-
-    }
-    public static void ScannerMat()
-    {
-        Scanner matSc = new Scanner (System.in); 
-        
-        Material material;
-        List<Material> listaMaterial = new ArrayList<Material>();
-        int opção = 0;
-        
-        do 
-        {
-            System.out.println("Opção 1 - Cadastra material");
+            System.out.println("## Bem Vindo a loja de Construção Construmar ^^ ##");
+            System.out.println("Escolha um dos Módulos abaixo");
+            System.out.println("Opção 1 - Incluir Colaborador");
+            System.out.println("Opção 2 - Incluir Cliente");
+            System.out.println("Opção 3 - Realizar Venda");
+            System.out.println("Opção 4 - Cancelar Venda");
+            System.out.println("Opção 5 - Consultar Vendas");
+            System.out.println("Opção 6 - Incluir Material");
+            System.out.println("Opção 7 - Incluir Fornecedor");
+            System.out.println("Opção 8 - Consultar Fornecedor");
             System.out.println("Opção 0 - Sair do programa");
             System.out.println("_______________________");
 
             System.out.print("Digite aqui sua opção: ");
-            opção = Integer.parseInt(matSc.nextLine());
-          
+            opção = Integer.parseInt(inMenu.nextLine());
+            
             if(opção == 1)
             {
-                material = new Material(String, int, float, String, float, Date);
-            
-                System.out.print("Digite o nome: ");
-                material.setNome(matSc.nextLine());
-                
-                System.out.print("Digite a Quantidade: ");
-                material.setQuantidade(Integer.parseInt(matSc.nextLine()));
-            
-                System.out.print("Digite o preço: ");
-                material.setPreço(Float.parseFloat(matSc.nextLine()));
-            
-                System.out.print("Digite a especificação: ");
-                material.setEspecif (matSc.nextLine());
-            
-                System.out.print ("Digite a a margem de lucro: ");
-                material.setMargemLucro(Float.parseFloat (matSc.nextLine()));
-            
-   //           System.out.print ("Digite a data de fabricação: ");
-   //           material.setDataFabricação (Date.parseDate (matSc.nextLine()));
-   
-                System.out.println();
-            
-                listaMaterial.add(material);
+                IncluirColaborador();
             }
-            else
+            if(opção == 2);
             {
-                System.out.println(listaMaterial.toString());
-
-                System.out.println("Pressione um tecla para continuar.");
-                matSc.nextLine();
-            }         
+                Incluircliente();
+            }
+            if(opção == 3);
+            {
+               // RealizarVenda();
+            }
+            if(opção == 4);
+            {
+                CancelarVendas();
+            }
+            if(opção == 5);
+            {
+                ConsultarVendas();
+            }
+            if(opção == 6)
+            {
+                IncluirMaterial();
+            }
+            if(opção == 7);
+            {
+                IncluirFornecedor();
+            }
+            if(opção == 8);
+            {
+                ConsultarFornecedor();
+            }
         }
-        while (opção != 0);
-    } 
+        while(opção!=0);
+    }
     
-    public static void ScannerVendas ()      
+    private void IncluirColaborador()
     {
-        Scanner vendaSc = new Scanner (System.in);
-        Vendas vendas;
-        List<Vendas> listaVendas = new ArrayList<Vendas>();
-        int opçãoV = 0;
-        
-        do
-        {
-            System.out.print("Opção 1 - Realizar Venda");
-            System.out.print("Opção 0 - Sair");
-            System.out.println("_______________________");
-            System.out.print("Digite aqui sua opção: ");
-            
-            opçãoV = Integer.parseInt(vendaSc.nextLine());
-            if (opçãoV ==1)
-            {
-                vendas = new Vendas();
-                
-                System.out.print("Digite o id da venda: ");
-                vendas.setIdVenda(Integer.parseInt(vendaSc.nextLine()));
-                
-                System.out.print ("Digite o valor total da venda: ");
-                vendas.setValorTotal(Float.parseFloat(vendaSc.nextLine()));
-                
-                System.out.print("Digite a data da venda: ");
-                vendas.setDataV(Date.parseDate(vendaSc.nextLine()));
-                
-            }
-        }
-        while (opçãoV != 0);
         
     }
-}    
+    private void Incluircliente()
+    {
+        
+    }
+    
+    private void IncluirMaterial()
+    {
+        int opção = 0;
+        Scanner inMaterial = new Scanner(System.in);
+            Material material;
+            
+            do
+            {
+                System.out.println("## Escolha uma das opções abaixo ##");
+                System.out.println("Opção 1 - Inclui Material");
+                System.out.println("Opção 2 - Imprime O Estoque");
+                System.out.println("Opção 0 - Sair do programa");
+                System.out.println("_______________________");
+                
+                System.out.print("Digite aqui sua opção: ");
+                opção = Integer.parseInt(inMaterial.nextLine());
+                
+                if(opção == 1)
+                {
+                    System.out.println("Insira os dados do material: ");
+                    material = new Material();
+                    
+                    System.out.print("Digite o nome: ");
+                    material.setNome(inMaterial.nextLine());
+                    
+                    System.out.print("Digite a Data de Fabricação: ");
+                    material.setDataFabricação(inMaterial.nextLine());
+                    
+                    System.out.print("Digite a Margem de Lucro: ");
+                    material.setMargemLucro(inMaterial.nextFloat());
+                    
+                    System.out.print("Digite o Preço: ");
+                    material.setPreço(inMaterial.nextFloat());
+                    
+                    System.out.print("Digite a Quantidade: ");
+                    material.setQuantidade(inMaterial.nextInt());
+                    
+                    System.out.println();
+                              
+                    Material.add(material);
+                }
+                else if (opção == 2)
+                {
+                    if(Material.isEmpty()){
+                        System.out.println("Não existem produtos incluidos, pressione uma tecla para continuar!");
+                        inMaterial.nextLine();
+                    }
+                    else
+                    {
+                        System.out.println(Material.toString());
+                        
+                        System.out.println("Pressione um tecla para continuar.");
+                        inMaterial.nextLine();
+                    }
+                }
+            }
+            while (opção!= 0);
+    }
+    private void CancelarVendas()
+    {
+        
+    }
+    private void ConsultarVendas()
+    {
+        System.out.println(Vendas);
+    }
+    private void IncluirFornecedor()
+    {
+        int opção = 0;
+        Scanner inFornecedor = new Scanner(System.in);
+        Fornecedor fornecedor;
+        do
+        {
+            System.out.println("## Escolha uma das opções abaixo ##");
+            System.out.println("Opção 1 - Inclui Fornecedor");
+            System.out.println("Opção 0 - Sair do programa");
+            System.out.println("_______________________");
+
+            System.out.print("Digite aqui sua opção: ");
+            opção = Integer.parseInt(inFornecedor.nextLine());
+            
+            if(opção == 1)
+            {
+                System.out.println("Insira os dados do Fornecedor: ");
+                fornecedor = new Fornecedor();
+                
+                System.out.print("Digite o nome: ");
+                fornecedor.setNome(inFornecedor.nextLine());
+                
+                System.out.print("Digite a Data: ");
+                fornecedor.setCnpj(inFornecedor.nextLine());
+
+                System.out.print("Digite a Quantidade: ");
+                fornecedor.setTelefone(inFornecedor.nextLine());
+
+                System.out.print("Digite o Preço: ");
+                fornecedor.setEmail(inFornecedor.nextLine());
+                
+                Fornecedor.add(fornecedor);
+            }    
+        }
+        while (opção!= 0);
+        inFornecedor.close();
+    }
+    private void ConsultarFornecedor()
+    {        
+        System.out.println(Fornecedor.toString());
+        System.out.println("Pressione um tecla para continuar.");
+             
+    }   
+    }
+    
+    
+ 

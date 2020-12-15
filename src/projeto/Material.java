@@ -1,20 +1,19 @@
 package projeto;
 import java.util.Date;
+
 public class Material 
 {
     private String nome;
     private int quantidade;
     private float preço;
-    private String especif;
     private float margemLucro;
-    private Date dataFabricação;
+    private String dataFabricação;
     
-    public Material (String nome, int quantidade, float preço, String especif, float margemLucro, Date dataFabricação) 
+    public Material () 
     { 
         this.nome = nome;
         this.quantidade = quantidade;
         this.preço = preço;
-        this.especif = especif;
         this.margemLucro = margemLucro;
         this.dataFabricação = dataFabricação;
     }
@@ -42,15 +41,8 @@ public class Material
     {
         return preço;
     }
-    public void setEspecif (String especif)
-    {
-        this.especif = especif;
-    }
-    public String getEspecif ()
-    {
-        return especif;
-    }
-    public void setMargemLucro (float margemLucro)
+   
+       public void setMargemLucro (float margemLucro)
     {
         this.margemLucro = margemLucro;
     }
@@ -58,21 +50,20 @@ public class Material
     {
         return margemLucro;
     }
-    public void setDataFabricação (Date dataFabricação)
+    public void setDataFabricação (String dataFabricação)
     {
         this.dataFabricação = dataFabricação;
     }
-    public Date getDataFabricação()
+    public String getDataFabricação()
     {
         return dataFabricação;
     }
-    private final String[] material = new String [20];
     
     @Override
 	public String toString() 
         {
             return "Nome: " + this.nome + ", Quantidade: " + this.quantidade +
-                   ", Preço: " + this.preço + ", Especificação: " + this.especif +
-                   ", Margem de Lucro: " + this.margemLucro + ", Data de Fabricação " + this.dataFabricação;
+                   ", Preço: " + this.preço +", Margem de Lucro: " + this.margemLucro + 
+                   ", Data de Fabricação " + this.dataFabricação;
         }
 }

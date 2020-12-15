@@ -9,10 +9,10 @@ import java.util.List;
 public class Vendas 
 {
     int idVenda;
-    Date dataV;
+    String dataV;
     float valorTotal;
     
-    public Vendas (int idVenda, Date dataV, float valorTotal)
+    public Vendas ()
     {
         this.idVenda = idVenda;
         this.dataV = dataV;
@@ -27,11 +27,11 @@ public class Vendas
     {
         return idVenda;
     }
-    public void setdataV(Date dataV)
+    public void setDataV(String dataV)
     {
         this.dataV = dataV;
     }
-    public Date getDataV()
+    public String getDataV()
     {
         return dataV;
     }
@@ -43,4 +43,15 @@ public class Vendas
     {    
         return valorTotal;
     }
+    
+    @Override
+        public String toString()
+        {
+            return "IdVenda" + this.idVenda + "DataV" + this.dataV + 
+                   "Valor Total" + this.valorTotal;
+        }
+    public void GerarExtrato()
+   {
+        System.out.println(this.toString() );
+   }
 }
