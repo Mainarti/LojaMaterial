@@ -9,7 +9,7 @@ public class Material
     private float margemLucro;
     private String dataFabricação;
     
-    public Material () 
+    public Material (String nome, int quantidade, float preço, float margemLucro, String dataFabricação) 
     { 
         this.nome = nome;
         this.quantidade = quantidade;
@@ -41,7 +41,6 @@ public class Material
     {
         return preço;
     }
-   
        public void setMargemLucro (float margemLucro)
     {
         this.margemLucro = margemLucro;
@@ -58,6 +57,10 @@ public class Material
     {
         return dataFabricação;
     }
+    public void VerificarEstoque()
+   {
+        System.out.println(this.toString() );
+   }
     
     @Override
 	public String toString() 
