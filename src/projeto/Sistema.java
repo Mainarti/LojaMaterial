@@ -5,9 +5,9 @@ import java.util.ArrayList;
 public class Sistema 
 {
     ArrayList<Material> Material = new ArrayList();
-    private final String[] colaborador = new String [25];
+    final String[] colaborador = new String [25];
     ArrayList<Vendas> Venda = new ArrayList();
-    ArrayList Cliente = new ArrayList();
+    ArrayList<Cliente> cliente = new ArrayList();
     ArrayList<Fornecedor> Fornecedor = new ArrayList();
     
     public static void main(String[] args) 
