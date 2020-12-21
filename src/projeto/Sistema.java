@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Sistema 
 {
     ArrayList<Material> Material = new ArrayList();
-    final String[] colaborador = new String [25];
+    Object colaborador []= new Object [25];
     ArrayList<Vendas> Venda = new ArrayList();
     ArrayList<Cliente> cliente = new ArrayList();
     ArrayList<Fornecedor> Fornecedor = new ArrayList();
@@ -20,14 +20,44 @@ public class Sistema
         //chamada.IncluirMaterial();
         //chamada.IncluirFornecedor();
         //chamada.ConsultarVendas();
+        //chamada.Incluircliente();
+        //chamada.IncluirColaborador();
     }
     private void IncluirColaborador()
     {
+       
+            Colaborador colab = new Colaborador("","","","");
         
+        Scanner input = new Scanner(System.in);
+                   
+            System.out.print("Entre com o Nome do colaborador: ");
+            colab.setNome (input.nextLine());
+        
+            System.out.print("Entre com o CPF do colaborador: ");
+            colab.setCpf(input.nextLine());
+        
+            System.out.print("Entre com o Login do colaborador: ");
+            colab.setLogin(input.nextLine());
+        
+            System.out.print("Entre com o Senha do colaborador: ");
+            colab.setSenha(input.nextLine());
+            colaborador[0] = input.nextInt();
+     
     }
     private void Incluircliente()
     {
+        Cliente cli = new Cliente("","");
+        Scanner input = new Scanner(System.in);
         
+        System.out.print("Entre com o Nome do cliente: ");
+        cli.setNome(input.nextLine());
+        
+        System.out.print("Entre com o CPF do cliente: ");
+        cli.setCpf(input.nextLine());
+        
+        cliente.add(cli);
+        System.out.println(cliente.contains(cli));
+                
     }
     private void IncluirMaterial()
     {
@@ -58,26 +88,27 @@ public class Sistema
     }
     private void RealizarVenda()
     {
-        Vendas vendasO = new Vendas();
-        
+        Vendas vendasO = new Vendas();                
         Scanner input = new Scanner(System.in);
         
         System.out.print("Entre com a Data da venda:");
         vendasO.setDate(input.nextLine());
         
         System.out.print("Entre com o Id da Venda:");
-        vendasO.setIdVenda(input.nextInt());  
+        vendasO.setIdVenda(input.nextInt()); 
         
         System.out.print("Entre com o valor total da venda:");
         vendasO.setValortotal(input.nextFloat());
         
-        Venda.add(vendasO);
+        vendasO.getCliente();
         
+        Venda.add(vendasO);
+                
         vendasO.GerarExtrato();
         
         System.out.println(Venda.contains(vendasO));
-        
-            }
+
+    }
     private void CancelarVendas()
     {
         Vendas vendasO = new Vendas();

@@ -5,14 +5,15 @@ package projeto;
  */
 public class Cliente extends Pessoa implements Comparable<Colaborador>{
     private Vendas regCompras;
+    
     private static int contCliente;
     
-    public Cliente(String nome, String cpf){
+    public Cliente(String nome, String cpf)
+    {
         super(nome, cpf);
         contCliente += 1; 
     }
-    
-    
+ 
     @Override 
     public String toString(){
         String aux = "Registro de Compras do Cliente: " + regCompras;

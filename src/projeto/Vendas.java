@@ -8,6 +8,7 @@ public class Vendas
    private int idvenda;  
    private float valortotal;
    private String date;
+   private Cliente cliente;
      
    public Vendas()
    {
@@ -22,7 +23,7 @@ public class Vendas
    @Override
    public String toString()
    {
-        return "GerarExtrato" + ("\nIdentificação venda: " + idvenda + "\nValor Total: " + valortotal + "\nData: " + date);
+        return("\nIdentificação venda: " + idvenda + "\nValor Total: " + valortotal + "\nData: " + date + "Cliente da venda" + cliente);
     }
     public int getIdvenda() 
     {
@@ -47,5 +48,13 @@ public class Vendas
     public void setDate(String date) 
     {
         this.date = date;
+    }
+    public void setCliente(Cliente cliente)
+    {
+        this.cliente = cliente;
+    }
+    public Cliente getCliente()
+    {
+        return cliente;
     }
 } 

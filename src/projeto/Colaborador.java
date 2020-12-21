@@ -30,13 +30,19 @@ public class Colaborador extends Pessoa implements Comparable<Cliente>{
     }
     
     @Override
-    public int compareTo(Cliente x) {
-	if (x.getEndereco().length() > this.getEndereco().length()) {
-		return 1;
-	} else if (x.getEndereco().length() < this.getEndereco().length()){
-		return -1;
-	} else {
-		return 0;
+    public int compareTo(Cliente x) 
+    {
+	if (x.getEndereco().length() > this.getEndereco().length()) 
+        {
+            return 1;
+	} 
+        else if (x.getEndereco().length() < this.getEndereco().length())
+        {
+            return -1;
+	} 
+        else 
+        {
+            return 0;
 	}
     }
     
@@ -53,7 +59,7 @@ public class Colaborador extends Pessoa implements Comparable<Cliente>{
     public static int getContColaborador() {
         return contColaborador;
     }
-          
+           
     // set
 
     public void setLogin(String login) {
