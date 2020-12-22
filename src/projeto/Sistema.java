@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class Sistema 
 {
     ArrayList<Material> Material = new ArrayList();
-    Object colaborador []= new Object [25];
+    Colaborador colaborador []= new Colaborador [25];
     ArrayList<Vendas> Venda = new ArrayList();
     ArrayList<Cliente> cliente = new ArrayList();
     ArrayList<Fornecedor> Fornecedor = new ArrayList();
@@ -15,37 +15,42 @@ public class Sistema
     // o menu vai ser aqui
         
         Sistema chamada = new Sistema();
-        //chamada.RealizarVenda();
+        
         //chamada.CancelarVendas();
         //chamada.IncluirMaterial();
         //chamada.IncluirFornecedor();
         //chamada.ConsultarVendas();
-        //chamada.Incluircliente();
+        chamada.Incluircliente();
+        chamada.RealizarVenda();
         //chamada.IncluirColaborador();
     }
     private void IncluirColaborador()
     {
        
-            Colaborador colab = new Colaborador("","","","");
+        int i;
+        
+        Colaborador colab = new Colaborador("","","","");
         
         Scanner input = new Scanner(System.in);
+        
+        
                    
-            System.out.print("Entre com o Nome do colaborador: ");
-            colab.setNome (input.nextLine());
+        System.out.print("Entre com o Nome do colaborador: ");
+        colab.setNome (input.nextLine());
         
-            System.out.print("Entre com o CPF do colaborador: ");
-            colab.setCpf(input.nextLine());
+        System.out.print("Entre com o CPF do colaborador: ");
+        colab.setCpf(input.nextLine());
         
-            System.out.print("Entre com o Login do colaborador: ");
-            colab.setLogin(input.nextLine());
+        System.out.print("Entre com o Login do colaborador: ");
+        colab.setLogin(input.nextLine());
         
-            System.out.print("Entre com o Senha do colaborador: ");
-            colab.setSenha(input.nextLine());
-            colaborador[0] = input.nextInt();
-     
+        System.out.print("Entre com o Senha do colaborador: ");
+        colab.setSenha(input.nextLine());
+            
     }
     private void Incluircliente()
     {
+        
         Cliente cli = new Cliente("","");
         Scanner input = new Scanner(System.in);
         
@@ -55,9 +60,18 @@ public class Sistema
         System.out.print("Entre com o CPF do cliente: ");
         cli.setCpf(input.nextLine());
         
+        System.out.print("Entre com o endereço do cliente: ");
+        cli.setEndereco(input.nextLine());
+        
+        System.out.print("Entre com o email do cliente: ");
+        cli.setEmail(input.nextLine());
+        
+        System.out.print("Entre com o telefone do cliente: ");
+        cli.setTelefone(input.nextLine());
+        
         cliente.add(cli);
-        System.out.println(cliente.contains(cli));
-                
+        
+        System.out.println(cliente.contains(cli));   
     }
     private void IncluirMaterial()
     {
@@ -90,24 +104,27 @@ public class Sistema
     {
         Vendas vendasO = new Vendas();                
         Scanner input = new Scanner(System.in);
+        for(int i = 0; i < cliente.size(); i++)
+        {                   
+            System.out.print("Escolha o cliente cadastrado: ");
+            System.out.println(cliente);
+                   
+            System.out.print("Entre com a Data da venda:");
+            vendasO.setDate(input.nextLine());
         
-        System.out.print("Entre com a Data da venda:");
-        vendasO.setDate(input.nextLine());
+            System.out.print("Entre com o Id da Venda:");
+            vendasO.setIdVenda(input.nextInt());
         
-        System.out.print("Entre com o Id da Venda:");
-        vendasO.setIdVenda(input.nextInt()); 
-        
-        System.out.print("Entre com o valor total da venda:");
-        vendasO.setValortotal(input.nextFloat());
-        
-        vendasO.getCliente();
-        
-        Venda.add(vendasO);
+            System.out.print("Entre com o valor total da venda:");
+            vendasO.setValortotal(input.nextFloat());
+                           
+            Venda.add(vendasO);
                 
-        vendasO.GerarExtrato();
+            vendasO.GerarExtrato();
         
-        System.out.println(Venda.contains(vendasO));
-
+            System.out.println(Venda.contains(vendasO));
+        }
+                
     }
     private void CancelarVendas()
     {
@@ -149,4 +166,6 @@ public class Sistema
         System.out.println(Fornecedor.contains(forneced));
 
     }
-    }
+    
+    
+}

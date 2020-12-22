@@ -1,4 +1,7 @@
 package projeto;
+
+import java.util.ArrayList;
+
 /**
  *
  * @author Mainarti
@@ -31,7 +34,7 @@ public class Vendas
     }
     public void setIdVenda(int idVenda) 
     {
-        this.idvenda = idvenda;
+        this.idvenda = idVenda;
     }
     public float getValortotal() 
     {
@@ -57,4 +60,10 @@ public class Vendas
     {
         return cliente;
     }
-} 
+    
+    private void AddCliente()
+    {
+      //  cliente = 1
+    }
+
+}

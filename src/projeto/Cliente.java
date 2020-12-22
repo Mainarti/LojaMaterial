@@ -14,11 +14,8 @@ public class Cliente extends Pessoa implements Comparable<Colaborador>{
         contCliente += 1; 
     }
  
-    @Override 
-    public String toString(){
-        String aux = "Registro de Compras do Cliente: " + regCompras;
-        return aux; 
-    }
+    
+    
     
     @Override 
     public int compareTo(Colaborador x) {
@@ -31,9 +28,9 @@ public class Cliente extends Pessoa implements Comparable<Colaborador>{
 	}
 }
     
-    public boolean imprimirInfoCliente(){
-        boolean x = true;
-        return x;
+    public void imprimirInfoCliente()
+    {
+        System.out.println("");
     } 
     
     // get

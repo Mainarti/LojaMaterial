@@ -9,7 +9,8 @@ package projeto;
  *
  * @author Mainarti
  */
-public class Pessoa extends Sistema{
+public class Pessoa extends Sistema
+{
     private String nome;
     private String endereco;
     private String email;
@@ -26,11 +27,11 @@ public class Pessoa extends Sistema{
     }
     /**
      *
+     * @return 
      */
     @Override 
     public String toString(){
-        String aux = "Nome: " + nome + "\nEndereco: " + endereco + "\nemail: "
-                + email + "\nCPF: " + cpf + "\nTelefone: " + telefone;
+        String aux = "CPF: " + cpf ;
         return aux; 
     }
     
