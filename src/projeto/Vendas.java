@@ -8,31 +8,35 @@ import java.util.ArrayList;
  */
 public class Vendas 
 {
-   private int idvenda;  
+   private String idvenda;  
    private float valortotal;
    private String date;
-   private Cliente cliente;
+   public String aux;
      
    public Vendas()
    {
        this.date = date;
        this.idvenda = idvenda;
        this.valortotal = valortotal;
+       this.aux = aux;
    }
-   public void GerarExtrato()
+   /** Método para gerar o extrato da venda realizada
+    * utilizando da sobrecarga do método ToString.
+    */
+   public void GerarExtrato()    
    {
         System.out.println(this.toString() );
    }
    @Override
    public String toString()
    {
-        return("\nIdentificação venda: " + idvenda + "\nValor Total: " + valortotal + "\nData: " + date + "Cliente da venda" + cliente);
+        return("\nIdentificação venda: " + idvenda + "\nValor Total: " + valortotal + "\nData: " + date + "\nCliente da venda: " + aux);
     }
-    public int getIdvenda() 
+    public String getIdvenda() 
     {
         return idvenda;
     }
-    public void setIdVenda(int idVenda) 
+    public void setIdVenda(String idVenda) 
     {
         this.idvenda = idVenda;
     }
@@ -52,18 +56,13 @@ public class Vendas
     {
         this.date = date;
     }
-    public void setCliente(Cliente cliente)
+        
+    public void setAux(String aux)
     {
-        this.cliente = cliente;
+        this.aux = aux;
     }
-    public Cliente getCliente()
+    public String getAux()
     {
-        return cliente;
+        return aux;
     }
-    
-    private void AddCliente()
-    {
-      //  cliente = 1
-    }
-
 }

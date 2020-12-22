@@ -9,7 +9,7 @@ package projeto;
  *
  * @author Mainarti
  */
-public class Pessoa extends Sistema
+public class Pessoa 
 {
     private String nome;
     private String endereco;

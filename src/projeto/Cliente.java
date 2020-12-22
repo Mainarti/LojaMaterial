@@ -4,8 +4,6 @@ package projeto;
  * @author Mainarti
  */
 public class Cliente extends Pessoa implements Comparable<Colaborador>{
-    private Vendas regCompras;
-    
     private static int contCliente;
     
     public Cliente(String nome, String cpf)
@@ -14,9 +12,6 @@ public class Cliente extends Pessoa implements Comparable<Colaborador>{
         contCliente += 1; 
     }
  
-    
-    
-    
     @Override 
     public int compareTo(Colaborador x) {
 	if (x.getNome().length() > this.getNome().length()) {
@@ -27,29 +22,16 @@ public class Cliente extends Pessoa implements Comparable<Colaborador>{
 		return 0;
 	}
 }
-    
     public void imprimirInfoCliente()
     {
         System.out.println("");
     } 
-    
     // get
-
-    public Vendas getRegCompras() {
-        return regCompras;
-    }
-
+  
     public static int getContCliente() {
         return contCliente;
-    }
-    
-        
+    } 
     // set
-
-    public void setRegCompras(Vendas regCompras) {
-        this.regCompras = regCompras;
-    }
-
     public void setContCliente(int contCliente) {
         Cliente.contCliente = contCliente;
     }
